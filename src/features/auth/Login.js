@@ -32,12 +32,13 @@ setdata(registeredUser)
   };
 
   return (
+    <>
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Login</h2>
       {error && <p className="text-red-500">{error}</p>}
       <form onSubmit={handleSubmit} className="w-1/2">
         <div className="mb-4">
-          <label>Email</label>
+          <label>Name</label>
           <input
             type="text"
             value={name}
@@ -57,6 +58,8 @@ setdata(registeredUser)
         <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded">Login</button>
       </form>
     </div>
+    </>
+
   );
 };
 

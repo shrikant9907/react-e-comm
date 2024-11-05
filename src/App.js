@@ -1,22 +1,20 @@
-// App.js
-import React from 'react';
+
 import {  Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer'
-import Login from './features/Login';
-import Register from './features/Regsiter';
+import Login from './features/auth/Login';
+import Register from './features/auth/Regsiter';
+import Layout from './Layout/Layout';
 
 function App() {
   return (
     <>
-      <Header />
+
       <Routes>
+
+        <Route path="/" element={<Layout />} >
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<h1>Welcome Home</h1>} />
+        </Route>
       </Routes>
-<Footer/>
-
     </>
   );
 }

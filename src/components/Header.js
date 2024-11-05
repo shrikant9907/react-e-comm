@@ -21,7 +21,7 @@ const Header = () => {
 
   const handleLogout = () => {
     setUser(null); 
-    navigate('/'); 
+    navigate('/login'); 
   };
 
   if (isLoading) {
@@ -46,7 +46,7 @@ const Header = () => {
           <NavLink to="/about" className="text-white hover:text-gray-200">About</NavLink>
           <NavLink to="/services" className="text-white hover:text-gray-200">Services</NavLink>
 
-          {!user ? (
+          {user ? (
             <button onClick={handleLogout} className="text-white hover:text-gray-200">Logout</button>
           ) : (
             <>

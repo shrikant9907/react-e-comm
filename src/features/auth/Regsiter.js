@@ -1,7 +1,6 @@
 // Register.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 const Register = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -22,6 +21,7 @@ const Register = () => {
   };
 
   return (
+    <>
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Register</h2>
       {error && <p className="text-red-500">{error}</p>}
@@ -47,6 +47,8 @@ const Register = () => {
         <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded">Register</button>
       </form>
     </div>
+    </>
+
   );
 };
 
