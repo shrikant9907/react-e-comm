@@ -1,32 +1,20 @@
-// Header.js
 import React, { useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
+  // Initial load par user ko localStorage se fetch karein
   useEffect(() => {
-    const fetchUser = () => {
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
-        setUser(JSON.parse(storedUser));
-      }
-      setIsLoading(false); 
-    };
-
-    fetchUser();
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    setUser(storedUser);
   }, []);
 
   const handleLogout = () => {
-    setUser(null); 
-    navigate('/login'); 
+    setUser(null); // state ko update karo
+    navigate('/login'); // Login page par redirect karo
   };
-
-  if (isLoading) {
-    return <div>Loading...</div>; 
-  }
 
   return (
     <nav className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white p-4">

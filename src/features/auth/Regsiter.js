@@ -4,27 +4,24 @@ import { useNavigate } from 'react-router-dom';
 const Register = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!name || !password) {
-      setError('All fields are required');
-      return;
+      return "all field arre required";
     }
-
     const newUser = { name, password };
     localStorage.setItem('user', JSON.stringify(newUser));
-    navigate('/');
+    navigate('/login');
   };
 
   return (
     <>
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Register</h2>
-      {error && <p className="text-red-500">{error}</p>}
       <form onSubmit={handleSubmit} className="w-1/2">
         <div className="mb-4">
           <label>Name</label>
