@@ -6,7 +6,8 @@ const Register2 = () => {
   const userDetail = {
     name:"",
     email:"",
-    password:""
+    password:"",
+    value:1
   }
   const [data, setData] = useState(userDetail);
 

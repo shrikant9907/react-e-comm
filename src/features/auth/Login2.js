@@ -36,7 +36,7 @@ const Login2 = () => {
 
         if (isValidUser) {
             alert("Login Successfully!");
-            navigate("/home");
+            navigate("/");
         } else {
             setMsg("Invalid Email or Password!");
         }
